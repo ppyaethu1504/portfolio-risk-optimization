@@ -1,75 +1,65 @@
-# 🚲 Citi Bike NYC Transit Analysis
+# 📈 Portfolio Risk Optimization
 
-> **Can bike-sharing fill the gaps in NYC's subway network?**
-> We crunched the data to find out.
+> **How do you build a portfolio that maximizes return without taking on unnecessary risk?**
+> This project answers that using Modern Portfolio Theory.
 
-[![Python](https://img.shields.io/badge/Python-3.x-blue?logo=python)](https://python.org)
-[![Pandas](https://img.shields.io/badge/Pandas-Data%20Analysis-150458?logo=pandas)](https://pandas.pydata.org)
-[![Status](https://img.shields.io/badge/Status-Complete-brightgreen)](https://github.com/ppyaethu1504/citibike-nyc-transit-analysis)
+[![Excel](https://img.shields.io/badge/Excel-Data%20Analysis-217346?logo=microsoft-excel)](https://microsoft.com/excel)
+[![Theory](https://img.shields.io/badge/Model-Markowitz%20Mean--Variance-blue)]()
+[![Status](https://img.shields.io/badge/Status-Complete-brightgreen)]()
 
 ---
 
 ## 📌 Overview
 
-This project combines **real-time Citi Bike station data** with **MTA subway stop locations** to study NYC's bike-sharing and transit infrastructure. Using geodesic distance calculations and availability metrics, we surface insights about accessibility gaps and underserved communities across NYC's boroughs.
+This project applies **Modern Portfolio Theory (MPT)** to construct optimized investment portfolios that minimize risk while achieving a target return. Using **Markowitz's mean-variance framework**, it demonstrates how diversification and risk-return tradeoffs guide real-world investment decisions.
+
+The analysis reflects practical considerations for:
+- 🏦 Asset managers
+- 🏛️ Pension funds
+- 👤 Individual investors
+
+The goal: **disciplined, data-driven portfolio allocation** — no guesswork.
 
 ---
 
-## ❓ Research Questions
+## 🧠 Core Concepts
 
-1. Which Citi Bike stations are nearest to MTA subway stations?
-2. Which neighborhoods depend most on Citi Bike when transit is unavailable?
-3. How many Citi Bike stations near subways suffer from low bike availability?
-4. Which subway stops require a 5+ minute walk to the nearest Citi Bike station?
-5. Which neighborhoods are underserved by **both** subway and Citi Bike?
-
----
-
-## 🗂️ Data Sources
-
-- **[CityBikes API](https://api.citybik.es/v2/)** — Real-time Citi Bike station data (availability, capacity, coordinates)
-- **[Transitland API](https://www.transit.land/documentation/rest-api/stops)** — MTA subway stop locations via `f-dr5r-nyctsubway` feed
+- **Expected Return** — weighted average of individual asset returns
+- **Portfolio Variance** — measures total risk including asset correlations
+- **Efficient Frontier** — set of optimal portfolios offering the best return for a given risk level
+- **Diversification** — reducing unsystematic risk by combining uncorrelated assets
+- **Risk-Return Tradeoff** — the fundamental principle that higher returns require accepting higher risk
 
 ---
 
-## 🔬 Methodology
+## 🗂️ Project Structure
 
-- Fetched live data from the CityBikes API for the `citi-bike-nyc` network
-- Retrieved 400 MTA subway stops via the Transitland REST API
-- Computed geodesic distances between every Citi Bike station and subway stop using `geopy`
-- Classified stations into NYC areas based on coordinates (Manhattan, Brooklyn, Queens, Bronx/Upper Manhattan)
-
-### 📏 Key Thresholds
-
-- 🔴 **High Dependency** — Citi Bike station > 1.0 km from nearest subway
-- 🟡 **Low Availability** — < 20% bikes available relative to station capacity
-- 🚶 **Poor Walk Access** — Nearest Citi Bike > 0.4 km (~5 min walk) from subway
-- ⚠️ **Underserved** — Station is BOTH > 1.0 km from subway AND < 20% availability
-
----
-
-## 🛠️ Tech Stack
-
-`Python` · `Pandas` · `GeoPy` · `Matplotlib` · `Jupyter Notebook`
-
----
-
-## 🚀 How to Run
-
-```bash
-# 1. Clone the repo
-git clone https://github.com/ppyaethu1504/citibike-nyc-transit-analysis.git
-cd citibike-nyc-transit-analysis
-
-# 2. Install dependencies
-pip install requests pandas geopy matplotlib
-
-# 3. Add your Transitland API key where API_KEY is set in the notebook
-
-# 4. Run the notebook top to bottom
+```
+portfolio-risk-optimization/
+├── README.md
+└── data/
+    └── stock_data.xlsx      # Historical stock data, returns, variance, correlations
 ```
 
 ---
 
+## 🛠️ Tools Used
+
+`Microsoft Excel` · `Mean-Variance Optimization` · `Markowitz MPT`
+
+---
+
+## 🚀 How to Use
+
+1. Open `data/stock_data.xlsx`
+2. Review the historical stock return data
+3. Explore the expected return, variance, and correlation calculations
+4. Analyze the optimized portfolio weights that minimize risk at a target return
+
+---
+
+## 👤 Author
+
+- **Sone Phyo** — [@ppyaethu1504](https://github.com/ppyaethu1504)
 
 
